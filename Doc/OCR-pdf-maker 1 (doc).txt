@@ -1,0 +1,37 @@
+Libraries
+
+	Tesseract
+	ImageMagick
+	Ghostscript
+
+	pdftk ("https://www.pdflabs.com/tools/pdftk-the-pdf-toolkit/")
+
+Commands:
+
+.pdf -> .jpg
+
+********************Instead use some online tool to to convert it to images*****************************
+
+magick input.pdf page%d.jpg
+
+********************Can use these commands as these work better*****************************************
+
+[.jpg -> (separate .pdf file]
+
+(Now, we can use Tesseract to perform the OCR by using the command as)
+
+							tesseract page0.jpg output_page0 pdf
+							tesseract page1.jpg output_page1 pdf
+
+(Now, to combine the text files, we can use the following command by installing pdftk as)
+
+					pdftk output_page0.pdf output_page1.pdf cat output combined.pdf
+
+Batch file made for better results:
+
+1. Just add separate .jpg files with names as (page*.jpg) and run the batch file in your local machine and you will get the (combined.pdf) file in the end
+2. If you wanna convert the (.pdf) file to (page*.jpg) files using commands, then you can run 
+
+						magick input.pdf page%d.jpg
+
+3. While performing '2', you need to make sure that your .pdf file name need to be (input.pdf)
