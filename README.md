@@ -1,7 +1,16 @@
-1\. Just add separate .jpg files with names as (page\*.jpg) and run the batch file in your local machine and you will get the (combined.pdf) file in the end
+# OCR-pdf-maker
 
-2\. If you wanna convert the (.pdf) file to (page\*.jpg) files using commands, then you can run
+This repository provides a simple way to create a combined PDF from a set of JPG images using OCR.
 
-magick input.pdf page%d.jpg
+## How to Use
 
-3\. While performing '2', you need to make sure that your .pdf file name need to be (input.pdf)
+1. **Convert JPGs to PDF:**
+
+   Place your individual JPG files in the same directory as the batch file.  Name your JPG files in the format `page*.jpg` (e.g., `page1.jpg`, `page2.jpg`, etc.).  Then, run the provided batch file on your local machine. The resulting combined PDF file, named `combined.pdf`, will be created in the same directory.
+
+2. **Convert PDF to JPGs (Optional):**
+
+   If you need to convert an existing PDF to individual JPG files for processing, you can use the following ImageMagick command:
+
+   ```bash
+   magick input.pdf page%d.jpg
